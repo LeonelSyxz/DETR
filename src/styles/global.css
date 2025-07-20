@@ -41,10 +41,6 @@
     animation-delay: 0.5s;
   }
 
-  .animate-fade-up {
-    animation: fade-up 0.8s ease-out forwards;
-  }
-
   .animate-delay-1000 {
     animation-delay: 1s;
   }
