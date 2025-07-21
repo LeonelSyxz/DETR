@@ -1,0 +1,169 @@
+---
+const softwares = [
+  { name: "Illustrator", src: "img/icons/ai.png" },
+  { name: "Photoshop", src: "img/icons/ps.png" },
+  { name: "Canva", src: "img/icons/canva.png" },
+  { name: "CapCut", src: "img/icons/capcut.png" },
+  { name: "Notion", src: "img/icons/notion.png" },
+  { name: "Figma", src: "img/icons/figma.png" },
+  { name: "Free Fire", src: "img/icons/ff.png" },
+  { name: "Only Fans", src: "img/icons/of.png" },
+];
+---
+
+<section
+  class="min-h-screen px-6 py-12 bg-gradient-to-tr from-primary-100 via-white to-primary-200 flex items-center justify-center"
+>
+  <div class="max-w-6xl w-full grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <!-- Card base classes -->
+    <!-- Profile -->
+    <div class="card">
+      <div class="relative group">
+        <img
+          src="https://i.pinimg.com/736x/22/ca/03/22ca03ec82583f806a7d645d77789b16.jpg"
+          alt="Foto de perfil de Diego Eduardo Téllez Reséndiz"
+          class="w-32 h-32 rounded-xl object-cover object-center shadow-xl border-2 border-white/40 transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+      <h2 class="mt-4 text-xl font-bold text-center">
+        <span
+          class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+        >
+          Diego Eduardo Téllez Reséndiz
+        </span>
+      </h2>
+      <span
+        class="mt-4 inline-flex items-center gap-2 text-xs bg-primary-100 text-primary-700 font-medium px-4 py-1 rounded-full"
+      >
+        <i class="fas fa-briefcase text-primary-600" aria-hidden="true"></i>
+        Freelancer • Marketing Digital
+      </span>
+      <p class="mt-4 text-sm text-primary-700 flex items-center gap-2">
+        <i class="fas fa-map-marker-alt text-primary-600" aria-hidden="true"
+        ></i>
+        Tamaulipas, México
+      </p>
+      <p class="mt-1 text-sm text-primary-700 flex items-center gap-2">
+        <i class="fas fa-birthday-cake text-primary-600" aria-hidden="true"></i>
+        04 / 10 / 2001
+      </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="card">
+      <h3
+        class="text-2xl font-extrabold flex items-center justify-center gap-2 text-center"
+      >
+        <i class="fa-solid fa-briefcase text-primary-600 text-xl"></i>
+        <span
+          class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+        >
+          Experiencia
+        </span>
+      </h3>
+
+      <h3
+        class="mt-4 text-4xl font-extrabold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+      >
+        +2 minutos
+      </h3>
+      <p class="mt-2 text-sm text-primary-700 font-medium">
+        De experiencia como <span class="font-semibold">freelancer</span><br />
+        en el mundo del <span class="font-semibold">marketing digital</span>.
+      </p>
+    </div>
+
+    <!-- Education -->
+    <div class="card">
+      <h3
+        class="text-2xl font-extrabold mb-4 flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+      >
+        <i
+          class="fa-solid fa-graduation-cap text-primary-600"
+          aria-hidden="true"></i>
+        Formación Académica
+      </h3>
+      <div class="flex flex-col items-center gap-2 text-primary-700 text-sm">
+        <i class="fas fa-scroll text-primary-500 text-xl"></i>
+        <p class="font-semibold text-base text-center">
+          Licenciatura en Mercadotecnia y Diseño Gráfico Digital
+        </p>
+        <p class="text-xs text-primary-600">Universidad Valle del Bravo</p>
+        <div
+          class="inline-block mt-2 bg-primary-100 text-primary-700 text-[11px] font-medium px-3 py-1 rounded-full"
+        >
+          2021 – 2025
+        </div>
+      </div>
+    </div>
+
+    <!-- Softwares -->
+    <div class="card md:col-span-2">
+      <h3
+        class="text-2xl font-extrabold text-center flex items-center justify-center"
+      >
+        <span
+          class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+        >
+          <i class="fa-solid fa-code text-primary-600 mr-2"></i>
+          Software
+        </span>
+      </h3>
+      <div
+        class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-6 mt-6 place-items-center"
+      >
+        {
+          softwares.map((software) => (
+            <div
+              class="flex flex-col items-center gap-2 transition-transform duration-200 hover:scale-105"
+              title={software.name}
+            >
+              <img
+                src={software.src}
+                alt={`Icono de ${software.name}`}
+                class="w-12 h-12"
+              />
+              <span class="text-xs text-primary-700 font-medium">
+                {software.name}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="card">
+      <h3
+        class="text-2xl font-extrabold text-center flex items-center justify-center"
+      >
+        <span
+          class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+        >
+          <i class="fa-solid fa-envelope text-primary-600 mr-2"></i>
+          Contáctame
+        </span>
+      </h3>
+      <ul
+        class="flex flex-col items-center text-primary-700 space-y-3 text-sm mt-4"
+      >
+        <li class="flex items-center">
+          <i class="fa-solid fa-phone text-primary-500 text-base mr-2"></i>
+          +52 1 833 181 5421
+        </li>
+        <li class="flex items-center">
+          <i
+            class="fa-solid fa-envelope-open-text text-primary-500 text-base mr-2"
+          ></i>
+          carlosalbertofriasm@gmail.com
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .card {
+    @apply flex flex-col items-center text-center p-6 rounded-2xl backdrop-blur-md bg-white/60 shadow-lg border border-gray-200 transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl;
+  }
+</style>
