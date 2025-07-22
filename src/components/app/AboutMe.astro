@@ -1,169 +1,134 @@
 ---
-const softwares = [
-  { name: "Illustrator", src: "img/icons/ai.png" },
-  { name: "Photoshop", src: "img/icons/ps.png" },
-  { name: "Canva", src: "img/icons/canva.png" },
-  { name: "CapCut", src: "img/icons/capcut.png" },
-  { name: "Notion", src: "img/icons/notion.png" },
-  { name: "Figma", src: "img/icons/figma.png" },
-  { name: "Free Fire", src: "img/icons/ff.png" },
-  { name: "Only Fans", src: "img/icons/of.png" },
+const cards = [
+  {
+    title: "Brand Design",
+    icon: "fa-bullhorn",
+    desc: "Diseño de marcas con enfoque estratégico en identidad visual y narrativa.",
+  },
+  {
+    title: "UI/UX Design",
+    icon: "fa-paint-brush",
+    desc: "Interfaces intuitivas que conectan con el usuario y maximizan la experiencia.",
+  },
+  {
+    title: "Web Development",
+    icon: "fa-code",
+    desc: "Desarrollo de sitios web modernos, responsivos y orientados a resultados.",
+  },
+  {
+    title: "Educación",
+    icon: "fa-graduation-cap",
+    desc: "Lic. en Ciencias de la Comunicación, Universidad Autónoma de Tamaulipas (2019 - 2023).",
+  },
+  {
+    title: "Software y Herramientas",
+    icon: "fa-laptop-code",
+    desc: "Adobe Suite, Figma, WordPress, Google Ads, Meta Ads, HTML, CSS, JavaScript.",
+  },
+  {
+    title: "Certificaciones",
+    icon: "fa-certificate",
+    desc: "Google Ads, Facebook Blueprint, Cert. Marketing Digital UAT.",
+  },
 ];
 ---
 
 <section
-  class="min-h-screen px-6 py-12 bg-gradient-to-tr from-primary-100 via-white to-primary-200 flex items-center justify-center"
+  class="relative h-full px-4 sm:px-6 md:px-8 py-20 sm:py-24 bg-gradient-to-tr from-primary-100 via-white to-primary-200 text-center overflow-hidden"
 >
-  <div class="max-w-6xl w-full grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-    <!-- Card base classes -->
-    <!-- Profile -->
-    <div class="card">
-      <div class="relative group">
+  <h2
+    class="text-4xl sm:text-5xl font-extrabold text-primary-900 mb-6 animate-fade-up"
+  >
+    About Me
+  </h2>
+  <p
+    class="text-lg sm:text-xl text-primary-700 max-w-3xl mx-auto mb-12 animate-fade-up animate-delay-300"
+  >
+    Convierto ideas en estrategias de marketing que conectan, inspiran y generan
+    impacto real.
+  </p>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start"
+  >
+    <!-- Columna Izquierda -->
+    <div class="space-y-6 animate-fade-up animate-delay-500">
+      {
+        cards.slice(0, 3).map((card) => (
+          <div class="bg-white rounded-2xl p-4 shadow-lg flex items-start gap-4 hover:shadow-xl transition">
+            <i class={`fas ${card.icon} text-xl text-primary-600 mt-1`} />
+            <div>
+              <h4 class="font-semibold text-primary-900">{card.title}</h4>
+              <p class="text-sm text-primary-700">{card.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Centro: Avatar + Datos -->
+    <div
+      class="flex flex-col items-center gap-4 animate-fade-up animate-delay-700 relative"
+    >
+      <div
+        class="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-500 shadow-xl"
+      >
         <img
           src="https://i.pinimg.com/736x/22/ca/03/22ca03ec82583f806a7d645d77789b16.jpg"
-          alt="Foto de perfil de Diego Eduardo Téllez Reséndiz"
-          class="w-32 h-32 rounded-xl object-cover object-center shadow-xl border-2 border-white/40 transition-transform duration-300 group-hover:scale-105"
+          alt="Diego Eduardo"
+          class="w-full h-full object-cover"
         />
       </div>
-      <h2 class="mt-4 text-xl font-bold text-center">
-        <span
-          class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
-        >
+      <div class="text-center mt-2">
+        <h3 class="text-xl font-bold text-primary-900">
           Diego Eduardo Téllez Reséndiz
-        </span>
-      </h2>
-      <span
-        class="mt-4 inline-flex items-center gap-2 text-xs bg-primary-100 text-primary-700 font-medium px-4 py-1 rounded-full"
-      >
-        <i class="fas fa-briefcase text-primary-600" aria-hidden="true"></i>
-        Freelancer • Marketing Digital
-      </span>
-      <p class="mt-4 text-sm text-primary-700 flex items-center gap-2">
-        <i class="fas fa-map-marker-alt text-primary-600" aria-hidden="true"
-        ></i>
-        Tamaulipas, México
-      </p>
-      <p class="mt-1 text-sm text-primary-700 flex items-center gap-2">
-        <i class="fas fa-birthday-cake text-primary-600" aria-hidden="true"></i>
-        04 / 10 / 2001
-      </p>
-    </div>
-
-    <!-- Experience -->
-    <div class="card">
-      <h3
-        class="text-2xl font-extrabold flex items-center justify-center gap-2 text-center"
-      >
-        <i class="fa-solid fa-briefcase text-primary-600 text-xl"></i>
+        </h3>
         <span
-          class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
+          class="inline-block bg-primary-600 text-white px-3 py-1 text-xs rounded-full mt-1 shadow"
         >
-          Experiencia
+          Freelancer · Marketing Digital
         </span>
-      </h3>
+        <p class="text-sm text-primary-700 mt-2">Tamaulipas, México</p>
+        <p class="text-sm text-primary-700">Nacido: 04 / 10 / 2001</p>
+      </div>
 
-      <h3
-        class="mt-4 text-4xl font-extrabold bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
-      >
-        +2 minutos
-      </h3>
-      <p class="mt-2 text-sm text-primary-700 font-medium">
-        De experiencia como <span class="font-semibold">freelancer</span><br />
-        en el mundo del <span class="font-semibold">marketing digital</span>.
-      </p>
-    </div>
-
-    <!-- Education -->
-    <div class="card">
-      <h3
-        class="text-2xl font-extrabold mb-4 flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
-      >
-        <i
-          class="fa-solid fa-graduation-cap text-primary-600"
-          aria-hidden="true"></i>
-        Formación Académica
-      </h3>
-      <div class="flex flex-col items-center gap-2 text-primary-700 text-sm">
-        <i class="fas fa-scroll text-primary-500 text-xl"></i>
-        <p class="font-semibold text-base text-center">
-          Licenciatura en Mercadotecnia y Diseño Gráfico Digital
-        </p>
-        <p class="text-xs text-primary-600">Universidad Valle del Bravo</p>
-        <div
-          class="inline-block mt-2 bg-primary-100 text-primary-700 text-[11px] font-medium px-3 py-1 rounded-full"
+      <!-- Contactos -->
+      <div class="flex gap-3 mt-4 flex-wrap justify-center">
+        <a
+          href="tel:+528331815421"
+          class="bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-md transition"
         >
-          2021 – 2025
-        </div>
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <a
+          href="mailto:diegoeduardo@gmail.com"
+          class="bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-full shadow-md transition"
+        >
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a
+          href="https://wa.me/5218331815421"
+          target="_blank"
+          class="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-md transition animate-pulse"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
       </div>
     </div>
 
-    <!-- Softwares -->
-    <div class="card md:col-span-2">
-      <h3
-        class="text-2xl font-extrabold text-center flex items-center justify-center"
-      >
-        <span
-          class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
-        >
-          <i class="fa-solid fa-code text-primary-600 mr-2"></i>
-          Software
-        </span>
-      </h3>
-      <div
-        class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-6 mt-6 place-items-center"
-      >
-        {
-          softwares.map((software) => (
-            <div
-              class="flex flex-col items-center gap-2 transition-transform duration-200 hover:scale-105"
-              title={software.name}
-            >
-              <img
-                src={software.src}
-                alt={`Icono de ${software.name}`}
-                class="w-12 h-12"
-              />
-              <span class="text-xs text-primary-700 font-medium">
-                {software.name}
-              </span>
+    <!-- Columna Derecha -->
+    <div class="space-y-6 animate-fade-up animate-delay-500">
+      {
+        cards.slice(3).map((card) => (
+          <div class="bg-white rounded-2xl p-4 shadow-lg flex items-start gap-4 hover:shadow-xl transition">
+            <i class={`fas ${card.icon} text-xl text-primary-600 mt-1`} />
+            <div>
+              <h4 class="font-semibold text-primary-900">{card.title}</h4>
+              <p class="text-sm text-primary-700">{card.desc}</p>
             </div>
-          ))
-        }
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div class="card">
-      <h3
-        class="text-2xl font-extrabold text-center flex items-center justify-center"
-      >
-        <span
-          class="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent"
-        >
-          <i class="fa-solid fa-envelope text-primary-600 mr-2"></i>
-          Contáctame
-        </span>
-      </h3>
-      <ul
-        class="flex flex-col items-center text-primary-700 space-y-3 text-sm mt-4"
-      >
-        <li class="flex items-center">
-          <i class="fa-solid fa-phone text-primary-500 text-base mr-2"></i>
-          +52 1 833 181 5421
-        </li>
-        <li class="flex items-center">
-          <i
-            class="fa-solid fa-envelope-open-text text-primary-500 text-base mr-2"
-          ></i>
-          carlosalbertofriasm@gmail.com
-        </li>
-      </ul>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
-
-<style>
-  .card {
-    @apply flex flex-col items-center text-center p-6 rounded-2xl backdrop-blur-md bg-white/60 shadow-lg border border-gray-200 transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl;
-  }
-</style>

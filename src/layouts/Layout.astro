@@ -19,8 +19,20 @@ const { title } = Astro.props;
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/54a5aa93c2.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
+
+    <!-- Dark Mode -->
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body class="antialiased">
     <div class="min-h-screen bg-gray-300 dark:bg-gray-950">
